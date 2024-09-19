@@ -9,8 +9,8 @@ import * as crc32c from "crc-32/crc32c";
 import { default as adler32 } from "adler-32";
 import yaml from "js-yaml";
 
-const baseUrl = "./";
 const cdnUrl = `https://cdn.jsdelivr.net/npm/pandoc-wasm@${process.env.VERSION}/dist/`;
+const baseUrl = cdnUrl;
 
 async function fallbackCdnFetch(input: string, init?: RequestInit) {
   const baseHeaders = await fetch(`${baseUrl}${input}`, { method: "HEAD" });
